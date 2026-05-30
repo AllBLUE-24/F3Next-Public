@@ -80,6 +80,16 @@ F3Next is built as a fleet of autonomous AI agents orchestrated by Temporal, all
    └─────────┘       └───────────┘     └───────────┘
 ```
 
+### Core Moat: Company Brain Runtime
+
+Most “AI ERP” products treat the LLM as the source of truth. We treat **live ERP state** as the final authority, enforcing an absolute golden rule: *Context may suggest; Live Registries decide.*
+
+*   **Live Entity Registry (LER):** Every single entity link (Item, Supplier, Customer) is checked in real-time against the live Frappe site, completely bypassing stale caches.
+*   **Temporal-First Orchestration:** Every data operation runs inside an isolated Temporal workflow. Activities retry automatically, surviving server crashes. A partial failure mid-import never corrupts the customer’s production database.
+*   **Honesty Contracts:** Imports and commands return absolute pass/partial/fail logs. The system halts and requests human-in-the-loop signals via Temporal input channels before committing high-risk records.
+*   **Provider-Agnostic LLM Layer:** Abstracted routing across Gemini Flash and GPT-4o-mini with schema locking via Pydantic to ensure zero JSON parse errors.
+
+
 ### Agent Fleet
 
 | Agent | Role |
@@ -127,25 +137,20 @@ F3Next is built as a fleet of autonomous AI agents orchestrated by Temporal, all
 
 F3Next is in **active beta** with manufacturing and industrial MSME customers. The full onboarding loop — upload → validate → deploy → operate — is functional end-to-end.
 
-The immediate roadmap covers:
-- Natural language chat interface on the validation step (ask the system why a mapping looks wrong)
-- Full multi-user workspace with team invites and role enforcement
-- Universal schema support for any document type
+*   **Development Phase:** Core end-to-end loops (upload $\rightarrow$ map $\rightarrow$ validate $\rightarrow$ deploy $\rightarrow$ operate) are fully complete and functional.
+*    **Enterprise Flight:** We are actively training and stress-testing our **v0.8 platform in production within a live corporate pilot deployment**.
 
-The longer-term vision: once the brain is trusted, every machine on the factory floor becomes a data node that communicates through it. F3Next becomes the operating system for the entire factory.
+*Note: The main application engine is kept in a private repository to safeguard active client configurations and enterprise infrastructure logic.*
 
 ---
 
-## Contact
+## 🏗️ Get in Touch
 
-Building something in manufacturing, supply chain, or enterprise automation? Or want to learn more about what we're building?
+We are actively building the future of industrial automation. If you are working in manufacturing, supply chain, enterprise infrastructure, or just want to talk system architecture, let’s connect.
 
-Reach out: 
-
-📧**[parth.kulkarni2412@gmail.com]**
-
-🌐 [f3next.in] 
-
+* **Founder Email:** [parth.kulkarni2412@gmail.com](mailto:parth.kulkarni2412@gmail.com)
+* **Platform Gateway:** [f3next.in](https://f3next.in)
+  
 ---
 
 <div align="center">
